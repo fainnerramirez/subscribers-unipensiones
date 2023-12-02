@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Heading, Stack, Text } from '@chakra-ui/react';
+import { Box, HStack, Heading, Stack, Text } from '@chakra-ui/react';
 import { Tweet } from "react-tweet";
 import Features from './Features.component';
 
@@ -12,18 +12,18 @@ const Details = () => {
                 fontSize={{ base: '3xl', lg: '3xl' }}
                 fontWeight='extrabold'
                 textAlign={'center'}
-                mt={{base: 5, md: 10}}
+                mt={{ base: 5, md: 10 }}
             >
                 <span style={{ color: "#000" }}>¿Porqué </span> Unipensiones <span style={{ color: '#000' }}>?</span>
             </Text>
-            <Stack flexDir={{ base: 'column', lg: 'row' }} spacing={50}>
-                <Box mt={10}>
+            <HStack flexDir={{ base: 'column', lg: 'row' }} justifyContent={'flex-start'} alignItems={'flex-start'}>
+                <Box mt={10} width={{base: "full", lg: "50%"}} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                     <Features />
                 </Box>
-                <Box pl={4} pr={4}>
+                <Box pl={{ base: 4, md: 0 }} pr={{ base: 4, md: 0 }} width={{base: "full", md: "50%"}} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                     <Tweet id="1731020418276851845" />
                 </Box>
-            </Stack>
+            </HStack>
         </>
     )
 }
