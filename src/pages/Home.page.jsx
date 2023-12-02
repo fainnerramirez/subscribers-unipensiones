@@ -43,8 +43,11 @@ const HomePage = () => {
                             bgGradient='linear(to-l, #7928CA, #FF0080)'
                             color={'#fff'}
                             size='lg'
+                            _hover={{
+                                bgGradient:'linear(to-l, #7928CA, #FF0080)'
+                            }}
                         >
-                            Suscribirme
+                            Notifícame
                         </Button>
                     </Box>
                 </VStack>
