@@ -3,6 +3,7 @@ import React from 'react'
 import { MdOutlineEmail } from "react-icons/md"
 import { Tweet } from "react-tweet"
 import Details from '../components/Details.component';
+import CounterApp from '../components/CounterApp.component';
 
 const HomePage = () => {
     return (
