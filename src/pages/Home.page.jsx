@@ -1,6 +1,8 @@
-import { Box, Button, Heading, Input, InputGroup, InputLeftElement, InputRightAddon, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, FormHelperText, Heading, Input, InputGroup, InputLeftElement, InputRightAddon, Text, VStack } from '@chakra-ui/react';
 import React from 'react'
 import { MdOutlineEmail } from "react-icons/md"
+import { Tweet } from "react-tweet"
+import Details from '../components/Details.component';
 
 const HomePage = () => {
     return (
@@ -24,14 +26,14 @@ const HomePage = () => {
                 <VStack spacing={3} width={{ base: '80%', md: '50%', lg: '20%' }} margin={'auto'}>
                     <InputGroup size={{ base: 'lg' }}>
                         <InputLeftElement pointerEvents='none'>
-                            <MdOutlineEmail color={'#FF0080'} fontSize={24}/>
+                            <MdOutlineEmail color={'#FF0080'} fontSize={24} />
                         </InputLeftElement>
                         <Input
                             type='email'
                             borderColor={'transparent'}
                             boxShadow={'inset 0 0 0 1px #fff, 0 0 0 4px #fff, 1px -1px 30px #7928CA, -3px 3px 30px #FF0080;'}
                             color={'pink.900'}
-                            placeholder='tu correo'
+                            placeholder='tucorreo@sitio.com'
                             size={{ base: 'lg', lg: 'lg' }}
                             focusBorderColor='#FF0080'
                             _placeholder={{ opacity: 1, color: 'gray.500' }} />
@@ -41,9 +43,14 @@ const HomePage = () => {
                             bgGradient='linear(to-l, #7928CA, #FF0080)'
                             color={'#fff'}
                             size='lg'
-                        >Suscribirme</Button>
+                        >
+                            Suscribirme
+                        </Button>
                     </Box>
                 </VStack>
+            </Box>
+            <Box>
+                <Details />
             </Box>
         </Box>
     )
