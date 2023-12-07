@@ -8,7 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 
 const HomePage = () => {
     return (
-        <Box mt={100}>
+        <Box mt={10}>
             <Box width={{ base: "95%", md: "80%", lg: "50%" }} margin={'auto'}>
                 <Text
                     bgGradient='linear(to-l, #1CB5E0, #000046)'
@@ -59,14 +59,14 @@ const HomePage = () => {
                             >
                                 Notifícame
                             </Button>
-                            <Box padding={1} marginTop={10} display={{ base: 'block', md: 'none' }}>
+                            <Box p={0} marginTop={10} display={{ base: 'block', md: 'none' }}>
                                 <Text textAlign={'center'}>Ó tambien</Text>
                                 <Divider />
                             </Box>
                         </Box>
                     </Box>
-                    <Box>
-                        <Text display={{ base: 'none', md: 'block' }}>Ó tambien</Text>
+                    <Box p={0} m={0}>
+                        <Text m={0} p={0} display={{ base: 'none', md: 'block' }}>Ó tambien</Text>
                         <Button
                             size='lg'
                             colorScheme='blue'
