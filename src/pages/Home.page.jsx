@@ -61,7 +61,7 @@ const HomePage = () => {
                         </Box>
                     </Box>
                     <Box>
-                        <Text>Ó tambien</Text>
+                        <Text display={{base: 'none', md: 'block'}}>Ó tambien</Text>
                         <Button
                             size='lg'
                             colorScheme='blue'
