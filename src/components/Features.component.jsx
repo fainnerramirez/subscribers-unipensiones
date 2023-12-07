@@ -50,7 +50,7 @@ const Card = ({ heading, description, icon, href }) => {
 const Features = () => {
     return (
         <Box p={4} width={{ base: '100%' }}>
-            <Stack spacing={10} flexDir={{ base: 'column', md: 'row' }} flexWrap={'wrap'}>
+            <Stack spacing={10} flexDir={{ base: 'column', md: 'row' }} flexWrap={'wrap'} justifyContent={'center'}>
                 <Card
                     heading={'Facilita tu búsqueda'}
                     icon={<Icon as={FcAssistant} w={10} h={10} />}

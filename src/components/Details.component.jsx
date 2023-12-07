@@ -7,12 +7,14 @@ const Details = () => {
     return (
         <>
             <Text
-                bgGradient='linear(to-l, #7928CA, #FF0080)'
+                bgGradient='linear(to-l, #1CB5E0, #000046)'
                 bgClip='text'
                 fontSize={{ base: '3xl', lg: '3xl' }}
                 fontWeight='extrabold'
                 textAlign={'center'}
                 mt={{ base: 5, md: 10 }}
+                pt={4}
+                pb={6}
             >
                 <span style={{ color: "#000" }}>¿Porqué </span> Unipensiones <span style={{ color: '#000' }}>?</span>
             </Text>
@@ -20,7 +22,7 @@ const Details = () => {
                 <Box mt={10} width={{base: "full", lg: "50%"}} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                     <Features />
                 </Box>
-                <Box pl={{ base: 4, md: 0 }} pr={{ base: 4, md: 0 }} width={{base: "full", md: "50%"}} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                <Box pl={{ base: 4, md: 0 }} pr={{ base: 4, md: 0 }} width={{base: "full", md: "100%", lg: '50%'}} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                     <Tweet id="1731020418276851845" />
                 </Box>
             </HStack>
