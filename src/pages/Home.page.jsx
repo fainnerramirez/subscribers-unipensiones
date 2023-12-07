@@ -9,27 +9,32 @@ import { FcGoogle } from "react-icons/fc";
 const HomePage = () => {
     return (
         <Box mt={100}>
-            <Box width={{ base: "100%", md: "80%", lg: "50%" }} margin={'auto'}>
+            <Box width={{ base: "95%", md: "80%", lg: "50%" }} margin={'auto'}>
                 <Text
                     bgGradient='linear(to-l, #1CB5E0, #000046)'
                     bgClip='text'
-                    fontSize={{ base: '4xl', lg: '6xl' }}
+                    fontSize={{ base: 'xl', lg: '3xl' }}
                     fontWeight='extrabold'
                     textAlign={'center'}
                 >
-                    ¡Unipensiones!
+                    <Text fontSize={{base: '2xl', md: '3xl'}}>¿Estas interesado en nuestro proyecto?</Text>
                     <br />
-                    <span style={{ color: "#000" }}>Una comunidad de </span>
-                    estudiantes <span style={{ color: "#000" }}>que </span>
-                    comparten <span style={{ color: "#000" }}>el mismo viaje que</span> tú
+                    <span>Obtén acceso prioritario a nuestra plataforma. </span>
+                    <span>Estamos a punto de lanzarla y recibirás una invitación exclusiva en tu correo
+                        electrónico para que seas el primero en explorar increíbles
+                        pensiones universitarias.</span>
+                    <br />
+                    <span>
+                        ¡No te pierdas la oportunidad de ser parte de Unipensiones, la plataforma definitiva para descubrir pensiones universitarias!
+                    </span>
                 </Text>
             </Box>
-            <Box mt={18}>
+            <Box marginTop={20}>
                 <HStack spacing={20} justifyContent={'center'} flexDir={{ base: 'column', md: 'row' }}>
                     <Box width={{ base: '80%', lg: '20%' }}>
                         <InputGroup size={{ base: 'lg' }}>
                             <InputLeftElement pointerEvents='none'>
-                                <MdOutlineEmail color={'#000046'} fontSize={{ base: 24, md: 24}}/>
+                                <MdOutlineEmail color={'#000046'} fontSize={{ base: 24, md: 24 }} />
                             </InputLeftElement>
                             <Input
                                 type='email'
@@ -54,14 +59,14 @@ const HomePage = () => {
                             >
                                 Notifícame
                             </Button>
-                            <Box padding={1} marginTop={10} display={{base: 'block', md: 'none'}}>
+                            <Box padding={1} marginTop={10} display={{ base: 'block', md: 'none' }}>
                                 <Text textAlign={'center'}>Ó tambien</Text>
                                 <Divider />
                             </Box>
                         </Box>
                     </Box>
                     <Box>
-                        <Text display={{base: 'none', md: 'block'}}>Ó tambien</Text>
+                        <Text display={{ base: 'none', md: 'block' }}>Ó tambien</Text>
                         <Button
                             size='lg'
                             colorScheme='blue'
