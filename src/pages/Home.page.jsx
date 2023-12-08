@@ -5,11 +5,12 @@ import { Tweet } from "react-tweet"
 import Details from '../components/Details.component';
 import CounterApp from '../components/CounterApp.component';
 import { FcGoogle } from "react-icons/fc";
+import Preambulo from '../components/Preambulo.component';
 
 const HomePage = () => {
     return (
         <Box mt={10}>
-            <Box width={{ base: "95%", md: "80%", lg: "50%" }} margin={'auto'}>
+            <Box width={{ base: "90%", md: "80%", lg: "50%" }} margin={'auto'}>
                 <Text
                     bgGradient='linear(to-l, #1CB5E0, #000046)'
                     bgClip='text'
@@ -17,9 +18,8 @@ const HomePage = () => {
                     fontWeight='extrabold'
                     textAlign={'center'}
                 >
-                    <Text fontSize={{ base: '2xl', md: '3xl' }}>¿Cansado de caminar horas para buscar pensiones universitarias?</Text>
+                    <Text fontSize={{ base: '2xl', md: '3xl' }}>¿Cansado de caminar horas para buscar una pension universitaria?</Text>
                 </Text>
-
                 <Heading as='h4' size='md'>
                     <br />
                     <span>Obtén acceso prioritario a nuestra plataforma. </span>
@@ -60,7 +60,7 @@ const HomePage = () => {
                                     bgGradient: 'linear(to-l, #000046, #1CB5E0)'
                                 }}
                             >
-                                Notifícame
+                                Notifícame cuando esté listo
                             </Button>
                             <Box p={0} marginTop={10} display={{ base: 'block', md: 'none' }}>
                                 <Text textAlign={'center'}>Ó tambien</Text>
@@ -80,6 +80,9 @@ const HomePage = () => {
             </Box>
             <Box>
                 <Details />
+            </Box>
+            <Box>
+                <Preambulo />
             </Box>
         </Box>
     )
