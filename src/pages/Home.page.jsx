@@ -17,7 +17,10 @@ const HomePage = () => {
                     fontWeight='extrabold'
                     textAlign={'center'}
                 >
-                    <Text fontSize={{base: '2xl', md: '3xl'}}>¿Estas interesado en nuestro proyecto?</Text>
+                    <Text fontSize={{ base: '2xl', md: '3xl' }}>¿Cansado de caminar horas para buscar pensiones universitarias?</Text>
+                </Text>
+
+                <Heading as='h4' size='md'>
                     <br />
                     <span>Obtén acceso prioritario a nuestra plataforma. </span>
                     <span>Estamos a punto de lanzarla y recibirás una invitación exclusiva en tu correo
@@ -27,7 +30,7 @@ const HomePage = () => {
                     <span>
                         ¡No te pierdas la oportunidad de ser parte de Unipensiones, la plataforma definitiva para descubrir pensiones universitarias!
                     </span>
-                </Text>
+                </Heading>
             </Box>
             <Box marginTop={20}>
                 <HStack spacing={20} justifyContent={'center'} flexDir={{ base: 'column', md: 'row' }}>
