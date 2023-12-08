@@ -7,7 +7,7 @@ import { MdCheckCircle } from 'react-icons/md';
 
 const Preambulo = () => {
     return (
-        <Box width={'90%'} margin={'auto'} mt={20}>
+        <Box width={'90%'} margin={'auto'} mt={10}>
             <Box textAlign={'center'} width={'90%'} margin={'auto'}>
                 <Text
                     bgGradient='linear(to-l, #1CB5E0, #000046)'
