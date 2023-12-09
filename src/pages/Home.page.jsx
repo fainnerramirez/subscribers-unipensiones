@@ -27,9 +27,9 @@ const HomePage = () => {
                 .then((response) => {
                     Swal.fire({
                         title: 'Genial!',
-                        text: 'Te has suscrito a Unipensiones',
+                        text: '¡Te tenemos en nuestra lista de espera VIP para nuestra app increíble! 🚀 Pronto recibirás noticias exclusivas directo en tu correo. ¡Gracias por unirte a Unipensiones!',
                         icon: 'success',
-                        footer: 'Ayúdanos a compartir a un amigo',
+                        footer: 'No te olvides de compartir a un amigo 😉',
                     })
                 })
                 .catch((error) => {
@@ -37,7 +37,7 @@ const HomePage = () => {
                         title: 'Error!',
                         text: 'Ha ocurrido un error al intentar suscribirte',
                         icon: 'error',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'Intentar nuevamente'
                     })
                 })
         }
