@@ -1,4 +1,4 @@
-import { AbsoluteCenter, Box, Button, Divider, FormHelperText, HStack, Heading, Input, InputGroup, InputLeftElement, InputRightAddon, List, ListIcon, ListItem, Stack, Text, VStack } from '@chakra-ui/react';
+import { AbsoluteCenter, Box, Button, Divider, FormHelperText, HStack, Heading, Input, InputGroup, InputLeftElement, InputRightAddon, List, ListIcon, ListItem, Stack, Text, VStack, useStepContext } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import { MdCheckCircle, MdOutlineEmail } from "react-icons/md"
 import { Tweet } from "react-tweet"
@@ -17,22 +17,26 @@ import SharedSocialButton from '../components/SharedSocialButton.component';
 const HomePage = () => {
 
     const [emailUser, setEmailUser] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleNotificationUser = async () => {
 
         if (emailUser != null && emailUser != undefined && emailUser != "" && emailUser.includes("@")) {
+            setIsLoading(true);
             let options = {dateSuscriber: new Date(), email: emailUser }
 
             addDoc(collection(db, "suscriptores"), options)
                 .then((response) => {
+                    setIsLoading(false);
                     Swal.fire({
                         title: 'Genial!',
-                        text: '¡Te tenemos en nuestra lista de espera VIP para nuestra app increíble! 🚀 Pronto recibirás noticias exclusivas directo en tu correo. ¡Gracias por unirte a Unipensiones!',
+                        text: '¡Te tenemos en nuestra lista de espera VIP para nuestra app increíble! 🚀 Pronto recibirás noticias del lanzamiento directo en tu correo. ¡Gracias por unirte a Unipensiones!',
                         icon: 'success',
                         footer: 'No te olvides de compartir a un amigo 😉',
                     })
                 })
                 .catch((error) => {
+                    setIsLoading(false);
                     Swal.fire({
                         title: 'Error!',
                         text: 'Ha ocurrido un error al intentar suscribirte',
@@ -42,6 +46,7 @@ const HomePage = () => {
                 })
         }
         else {
+            setIsLoading(false);
             Swal.fire({
                 title: 'Error!',
                 text: 'Escribe un correo válido',
@@ -139,6 +144,7 @@ const HomePage = () => {
                                             bgGradient: 'linear(to-l, #000046, #1CB5E0)'
                                         }}
                                         onClick={handleNotificationUser}
+                                        isLoading={isLoading}
                                     >
                                         Notifícame
                                     </Button>
