@@ -1,5 +1,5 @@
 import { AbsoluteCenter, Box, Button, Divider, FormHelperText, HStack, Heading, Input, InputGroup, InputLeftElement, InputRightAddon, List, ListIcon, ListItem, Stack, Text, VStack } from '@chakra-ui/react';
-import React from 'react'
+import React, { useState } from 'react'
 import { MdCheckCircle, MdOutlineEmail } from "react-icons/md"
 import { Tweet } from "react-tweet"
 import Details from '../components/Details.component';
@@ -9,8 +9,48 @@ import Preambulo from '../components/Preambulo.component';
 import FooterComponent from '../components/Footer.component';
 import { RiMedalFill } from "react-icons/ri";
 import Navbar from '../components/Navbar.component';
+import Swal from 'sweetalert2'
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../firebase/firestore/database';
+import SharedSocialButton from '../components/SharedSocialButton.component';
 
 const HomePage = () => {
+
+    const [emailUser, setEmailUser] = useState("");
+
+    const handleNotificationUser = async () => {
+
+        if (emailUser != null && emailUser != undefined && emailUser != "" && emailUser.includes("@")) {
+            let options = { email: emailUser }
+
+            addDoc(collection(db, "suscriptores"), options)
+                .then((response) => {
+                    Swal.fire({
+                        title: 'Genial!',
+                        text: 'Te has suscrito a Unipensiones como ' + emailUser + '\n' + '🥳😀' + 'Ayudanos a compartir',
+                        icon: 'success',
+                        confirmButtonText: 'Compartir con un amigo'
+                    })
+                })
+                .catch((error) => {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Ha ocurrido un error al intentar suscribirte',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    })
+                })
+        }
+        else {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Escribe un correo válido',
+                icon: 'error',
+                confirmButtonText: 'Intentar de nuevo'
+            })
+        }
+    }
+
     return (
         <>
             <Navbar />
@@ -24,7 +64,7 @@ const HomePage = () => {
                         >
                             Unipensiones será lanzado dentro de poco
                         </Heading>
-                        <Heading as='h4' size='md' width={{base: '100%', lg: '70%'}}>
+                        <Heading as='h4' size='md' width={{ base: '100%', lg: '70%' }}>
                             <br />
                             <span>Estamos a punto de lanzarla y recibirás una invitación exclusiva en tu correo
                                 electrónico para que seas el primero en explorar increíbles
@@ -36,8 +76,8 @@ const HomePage = () => {
                             <span>🥳</span>
                         </Heading>
                     </Box>
-                    <Box marginTop={20} width={{base: '100%', lg: '50%'}}>
-                        <VStack spacing={10} className='card-glass' width={{base: '100%', lg: '50%'}} height={600} margin={'auto'}>
+                    <Box marginTop={20} width={{ base: '100%', lg: '50%' }}>
+                        <VStack spacing={10} className='card-glass' width={{ base: '100%', lg: '50%' }} height={600} margin={'auto'}>
                             <Box mt={2}>
                                 <List spacing={3}>
                                     <ListItem>
@@ -84,10 +124,13 @@ const HomePage = () => {
                                         size={{ base: 'md', lg: 'lg' }}
                                         focusBorderColor='#000046'
                                         _placeholder={{ opacity: 1, color: 'gray.500' }}
+                                        onChange={(e) => setEmailUser(e.target.value)}
+                                        required
                                     />
                                 </InputGroup>
                                 <Box mt={5} justifyContent={'center'} alignItems={'center'}>
                                     <Button
+                                        type='submit'
                                         width={'full'}
                                         bgGradient='linear(to-l, #1CB5E0, #000046)'
                                         color={'#fff'}
@@ -95,16 +138,18 @@ const HomePage = () => {
                                         _hover={{
                                             bgGradient: 'linear(to-l, #000046, #1CB5E0)'
                                         }}
+                                        onClick={handleNotificationUser}
                                     >
                                         Notifícame
                                     </Button>
                                 </Box>
                             </Box>
                             <Box m={0} p={0} display={'flex'} justifyContent={'center'} alignItems={'center'} flexDir={'column'} color={'gray.400'}>
-                                <Button textAlign={'center'} leftIcon={<RiMedalFill />} color={'gray.400'}>Unipensiones</Button>
+                                <Button textAlign={'center'} leftIcon={<RiMedalFill />} color={'gray.400'} disabled="disabled">Unipensiones</Button>
                                 <Text textAlign={'center'} width={'90%'} margin={'auto'}>
-                                    Una comunidad de estudiantes que comparten el mismo viaje que tú
+                                    Compartir con un amigo
                                 </Text>
+                                <Text ml={300}><SharedSocialButton /></Text>
                             </Box>
                         </VStack>
                     </Box>
