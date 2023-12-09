@@ -21,7 +21,7 @@ const HomePage = () => {
     const handleNotificationUser = async () => {
 
         if (emailUser != null && emailUser != undefined && emailUser != "" && emailUser.includes("@")) {
-            let options = { email: emailUser }
+            let options = {dateSuscriber: new Date(), email: emailUser }
 
             addDoc(collection(db, "suscriptores"), options)
                 .then((response) => {
