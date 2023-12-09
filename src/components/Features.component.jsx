@@ -15,10 +15,12 @@ import {
     FcDonate,
     FcApproval
 } from 'react-icons/fc'
+import "../styles/glass.css"
 
 const Card = ({ heading, description, icon, href }) => {
     return (
         <Box
+            className='card-glass'
             maxW={{ base: 'full', md: '275px', lg: '400px' }}
             w={'full'}
             borderWidth="1px"

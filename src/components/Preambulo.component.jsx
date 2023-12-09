@@ -4,6 +4,7 @@ import AnfitrionesGIF from "../assets/anfitriones.gif";
 import EstudiantesPGN from "../assets/estudiantes.png";
 import Estudiantes2PNG from "../assets/estudiantes2.png";
 import { MdCheckCircle } from 'react-icons/md';
+import "../styles/glass.css"
 
 const Preambulo = () => {
     return (
@@ -21,7 +22,7 @@ const Preambulo = () => {
                 >
                     <span style={{ color: "#000" }}>Imágenes de </span> Unipensiones
                 </Text>
-                <Text fontWeight={'bold'}>La apariencia de la plataforma puede cambiar
+                <Text fontWeight={'bold'} fontSize={20}>La apariencia de la plataforma puede cambiar
                     en el momento del lanzamiento si así lo considera el equipo de Unipensiones</Text>
             </Box>
             <Box mt={5}>
@@ -31,7 +32,7 @@ const Preambulo = () => {
                         En nuestra plataforma, se destacan dos roles fundamentales: <span style={{ fontWeight: 'bold' }}>los anfitriones y los estudiantes</span>
                     </ListItem>
                 </List>
-                <Box display={'flex'} alignItems={'center'} border={'solid'} borderColor={'teal'} width={'100%'} borderRadius={10}>
+                <Box display={'flex'} flexDir={{ base: 'column', lg: 'row' }} alignItems={'center'} borderRadius={10} p={5} className='card-glass'>
                     <Box>
                         <Badge ml={10} variant='subtle' colorScheme='green' borderRadius={'full'} pt={3} pl={5} pr={5} pb={3} fontWeight={'bolder'} fontSize={20}>
                             1
@@ -48,19 +49,17 @@ const Preambulo = () => {
                         Los anfitriones son esenciales para mantener actualizada y precisa la información disponible para los estudiantes.
                     </Box>
                 </Box>
-                <Box mt={20}>
+                <Box mt={20} p={5} className='card-glass' width={{ base: '100%', lg: '70%' }} marginLeft={'auto'} marginRight={'auto'} marginTop={10}>
                     <Image
                         src={AnfitrionesGIF}
-                        width={{ base: '100%', lg: '70%' }}
-                        margin={'auto'} border={'solid'}
-                        borderColor={'teal'}
-                        borderWidth={{ base: 5, lg: 10 }}
+                        width={{ base: '100%', lg: '100%' }}
+                        margin={'auto'}
                         borderRadius={10} />
                 </Box>
             </Box>
 
             <Box mt={10}>
-                <Box display={'flex'} alignItems={'center'} border={'solid'} borderColor={'teal'} width={'100%'} borderRadius={10}>
+                <Box display={'flex'} flexDir={{ base: 'column', lg: 'row' }} alignItems={'center'} width={'100%'} borderRadius={10} p={5} className='card-glass'>
                     <Box>
                         <Badge ml={10} variant='subtle' colorScheme='green' borderRadius={'full'} pt={3} pl={5} pr={5} pb={3} fontWeight={'bolder'} fontSize={20}>
                             2
@@ -77,12 +76,12 @@ const Preambulo = () => {
                         necesitar información adicional.
                     </Box>
                 </Box>
-                <Box mt={20} display={'flex'} flexDir={{ base: 'column', lg: 'row' }}>
+                <Box mt={20} display={'flex'} flexDir={{ base: 'column', lg: 'row' }} p={5} className='card-glass'>
                     <Box>
-                        <Image src={EstudiantesPGN} margin={'auto'} border={'solid'} borderColor={'teal'} borderWidth={{ base: 5, lg: 10 }} borderRadius={10} height={{ base: '100%', lg: '90%' }} />
+                        <Image src={EstudiantesPGN} margin={'auto'} borderRadius={10} height={{ base: '100%', lg: '90%' }} />
                     </Box>
                     <Box mt={{ base: 5, lg: 0 }}>
-                        <Image src={Estudiantes2PNG} margin={'auto'} border={'solid'} borderColor={'teal'} borderWidth={{ base: 5, lg: 10 }} borderRadius={10} height={{ base: '100%', lg: '90%' }} />
+                        <Image src={Estudiantes2PNG} margin={'auto'} borderRadius={10} height={{ base: '100%', lg: '90%' }} />
                     </Box>
                 </Box>
             </Box>

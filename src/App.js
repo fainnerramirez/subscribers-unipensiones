@@ -1,13 +1,14 @@
 import { Tweet } from 'react-tweet';
-import { Button } from '@chakra-ui/react';
+import { Box, Button } from '@chakra-ui/react';
 import HomePage from './pages/Home.page';
+import "./styles/global.css";
 
 function App() {
   return (
-    <div className="App">
+    <Box className="App" bgGradient='linear(to-l, #E5F3FE, #E0E9F5)'>
       {/* <Tweet id={"1726105951005188343"} /> */}
       <HomePage />
-    </div>
+    </Box>
   );
 }
 
