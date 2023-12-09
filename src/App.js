@@ -5,7 +5,7 @@ import "./styles/global.css";
 
 function App() {
   return (
-    <Box className="App" bgGradient='linear(to-l, #E5F3FE, #E0E9F5)'>
+    <Box className="App" bgGradient='linear(to-l, #F6FBFE, #E0E9F5)'>
       {/* <Tweet id={"1726105951005188343"} /> */}
       <HomePage />
     </Box>

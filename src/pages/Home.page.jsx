@@ -80,7 +80,7 @@ const HomePage = () => {
                                         borderColor={'transparent'}
                                         boxShadow={'inset 0 0 0 1px #fff, 0 0 0 4px #fff, 1px -1px 30px #1CB5E0, -3px 3px 30px #4e4376;'}
                                         color={'#000046'}
-                                        placeholder='tucorreo@sitio.com'
+                                        placeholder='Tu correo aquí'
                                         size={{ base: 'md', lg: 'lg' }}
                                         focusBorderColor='#000046'
                                         _placeholder={{ opacity: 1, color: 'gray.500' }}
