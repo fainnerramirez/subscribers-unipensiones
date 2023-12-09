@@ -12,7 +12,7 @@ const SharedSocialButton = () => {
     const title = "Unipensiones";
 
     return (
-        <div className="Demo__container">
+        <div className="Demo__container" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             <div className="Demo__some-network">
                 <TelegramShareButton
                     url={shareUrl}

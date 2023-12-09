@@ -27,9 +27,9 @@ const HomePage = () => {
                 .then((response) => {
                     Swal.fire({
                         title: 'Genial!',
-                        text: 'Te has suscrito a Unipensiones como ' + emailUser + '\n' + '🥳😀' + 'Ayudanos a compartir',
+                        text: 'Te has suscrito a Unipensiones',
                         icon: 'success',
-                        confirmButtonText: 'Compartir con un amigo'
+                        footer: 'Ayúdanos a compartir a un amigo',
                     })
                 })
                 .catch((error) => {
@@ -77,7 +77,7 @@ const HomePage = () => {
                         </Heading>
                     </Box>
                     <Box marginTop={20} width={{ base: '100%', lg: '50%' }}>
-                        <VStack spacing={10} className='card-glass' width={{ base: '100%', lg: '50%' }} height={600} margin={'auto'}>
+                        <VStack spacing={10} className='card-glass' width={{ base: '100%', lg: '50%' }} height={630} margin={'auto'}>
                             <Box mt={2}>
                                 <List spacing={3}>
                                     <ListItem>
@@ -149,7 +149,7 @@ const HomePage = () => {
                                 <Text textAlign={'center'} width={'90%'} margin={'auto'}>
                                     Compartir con un amigo
                                 </Text>
-                                <Text ml={300}><SharedSocialButton /></Text>
+                                <Text margin={'auto'}><SharedSocialButton /></Text>
                             </Box>
                         </VStack>
                     </Box>
