@@ -23,7 +23,7 @@ const Details = () => {
                     <Features />
                 </Box>
                 <Box pl={{ base: 4, md: 0 }} pr={{ base: 4, md: 0 }} width={{base: "full", md: "100%", lg: '50%'}} display={'flex'} justifyContent={'center'} alignItems={'center'}>
-                    <Tweet id="1731020418276851845" />
+                    <Tweet id="1733911147701502133" />
                 </Box>
             </HStack>
         </>
