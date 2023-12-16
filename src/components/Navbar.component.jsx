@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react'
 import Logo from "../assets/logoUP.png"
 import { getAllSuscriptors } from '../firebase/collections/querys/suscriptores'
 import { FcBusinessman } from "react-icons/fc";
+import "../styles/glass.css";
 
 const CardsSuscriptors = ({ suscriptor }) => {
     return (
         <Card mt={2}>
-            <CardHeader display={'flex'} justifyContent={'center'} alignItems={'center'} flexDir={'column'}>
+            <CardHeader className='card-glass' bgGradient='linear(to-l, #F6FBFE, #E0E9F5)' display={'flex'} justifyContent={'center'} alignItems={'center'} flexDir={'column'}>
                 <Icon as={FcBusinessman} w={100} h={100} borderColor={'blue.100'} borderWidth={2} borderRadius={'full'} />
                 <Heading size='md'>{suscriptor.email.split("@")[0]}</Heading>
             </CardHeader>
@@ -55,24 +56,22 @@ const Navbar = () => {
         });
     }, [])
 
-    function compararPorNombre(a, b) {
-
+    const compararPorNombre = (a, b) => {
         const nombreA = a.email.toUpperCase();
         const nombreB = b.email.toUpperCase();
-      
         if (nombreA < nombreB) {
-          return -1;
+            return -1;
         }
         if (nombreA > nombreB) {
-          return 1;
+            return 1;
         }
-        return 0; 
+        return 0;
     }
 
     const SuscriptorsOrdenados = suscriptors.sort(compararPorNombre);
 
     return (
-        <HStack p={10} justifyContent={{base: 'center', md: 'space-between'}} flexDir={{base: 'column', md: 'row'}}>
+        <HStack p={10} justifyContent={{ base: 'center', md: 'space-between' }} flexDir={{ base: 'column', md: 'row' }}>
             <HStack spacing={10}>
                 <Image src={Logo} width={50} height={50} borderRadius={10} />
                 <Heading size={'lg'}>Unipensiones</Heading>
