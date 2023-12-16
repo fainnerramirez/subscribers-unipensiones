@@ -19,7 +19,7 @@ function ListSuscriptorButton({ suscriptors }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <>
-            <Button onClick={onOpen} colorScheme='blue'>Ver Lista VIP</Button>
+            <Button onClick={onOpen} colorScheme='blue' bg={'#1a2537'}>Ver Lista VIP</Button>
             <Modal isOpen={isOpen} onClose={onClose} size={'xl'} scrollBehavior={'inside'}>
                 <ModalOverlay />
                 <ModalContent>
