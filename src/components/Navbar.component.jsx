@@ -70,7 +70,8 @@ const ListSuscriptorButton = ({ suscriptors }) => {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            Total suscriptores Actual: {suscriptors.length}
+            Total suscriptores Actual:{" "}
+            <span style={{ fontWeight: "bolder" }}>{suscriptors.length}</span>
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
